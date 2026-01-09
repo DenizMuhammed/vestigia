@@ -1,4 +1,4 @@
-
+#pragma execution_character_set("utf-8")
 
 Vestag ID: ##denizmuhammed.github.io-vestigia-daily-md
 ------------------------------------------------------------------------------
