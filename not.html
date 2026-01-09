@@ -22,10 +22,16 @@ textarea.vestag {
 ## denizmuhammed.github.io/vestigia/not.html
 
   #1
-  ? Açıklama
-  @ ocak 2026
-  > deneme <
+  ? deneme
+  > bu bir deneme metnidir.<
+
+  #2
+  ? bu ikinci deneme metnidir
+  >deneme metnini gövdesidir<
   
+  
+
+
 
 
 
@@ -38,5 +44,12 @@ textarea.vestag {
 
   
 </textarea>
+<script>
+const t = document.querySelector('textarea.vestag');
+if (t) {
+  t.style.height = 'auto';
+  t.style.height = t.scrollHeight + 'px';
+}
+</script>
 </body>
 </html>
