@@ -3,22 +3,27 @@
 <head>
 <meta charset="utf-8">
 <style>
-.vestag {
-  white-space: pre;          /* satırları aynen korur */
-  font-family: monospace;    /* metin hissi */
-  background: transparent;   /* textbox hissi yok */
-  margin: 0;
+textarea.vestag {
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  background: transparent;
+  box-shadow: none;
+  overflow: hidden;
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.4;
 }
 </style>
 </head>
 <body>
 
-<pre class="vestag">
-@ iki-bin-yirmi-altı-yılında-büyük-evde-bulduğum-not-defteri
->
-bu gün okula gitmek istemiyorum çünkü matematik dersi var
-<
-</pre>
+<textarea class="vestag" readonly rows="4">
+## ankara-1972
+@1972
+> bu gün okula gitmek istemiyorum <
+</textarea>
 
 </body>
 </html>
