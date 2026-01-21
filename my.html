@@ -6,9 +6,7 @@
   <title>Vestigia</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -16,29 +14,23 @@
       display: flex;
       align-items: center;
       justify-content: center;
-
       font-family: -apple-system, BlinkMacSystemFont,
                    "Segoe UI", Roboto, Inter, Arial, sans-serif;
-
-      /* Daha az göz yoran arka plan */
       background: #eef1f5;
       color: #1f2933;
     }
 
     form {
       width: 100%;
-      max-width: 420px;
+      max-width: 600px;
       padding: 28px;
-
       background: #ffffff;
       border-radius: 14px;
-
       box-shadow:
         0 10px 30px rgba(0, 0, 0, 0.08),
         0 1px 2px rgba(0, 0, 0, 0.05);
     }
 
-    /* Başlık */
     .title {
       margin-bottom: 14px;
       font-size: 18px;
@@ -48,26 +40,71 @@
       color: #374151;
     }
 
-    textarea {
-      width: 100%;
-      min-height: 170px;
-      resize: vertical;
-
-      padding: 14px 16px;
-
+    .readonly-block {
+      margin-bottom: 14px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       font-size: 14px;
-      line-height: 1.6;
-      font-family: ui-monospace, SFMono-Regular,
-                   Menlo, Consolas, monospace;
+      white-space: pre;
+    }
 
-      color: #111827;
+    .line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 14px;
+    }
+
+    .line span {
+      width: 14px;
+      text-align: center;
+	
+    }
+
+    textarea.single {
+      width: 100%;
+      min-height: 36px;
+      resize: none;
+      padding: 8px 10px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
       background: #f9fafb;
+    }
+	
+	textarea.single2 {
+  /* 🔹 GENİŞLİK DARALTILDI */
+  width: 220px;              /* ihtiyaca göre 180–260px arası oynatılabilir */
+  max-width: 100%;
 
+  /* 🔹 SAĞA YASLAMA */
+  margin-left: auto;
+
+  /* 🔹 MEVCUT DAVRANIŞLAR KORUNDU */
+  min-height: 36px;
+  resize: none;
+  padding: 8px 10px;
+
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #f9fafb;
+}
+
+	
+	
+
+    textarea.main {
+      width: 100%;
+      min-height: 160px;
+      resize: both;
+      padding: 12px 14px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       border: 1px solid #d1d5db;
       border-radius: 10px;
-
-      white-space: pre;
-      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      background: #f9fafb;
+      margin-bottom: 12px;
     }
 
     textarea:focus {
@@ -78,98 +115,112 @@
     }
 
     button {
-      margin-top: 18px;
+      margin-top: 10px;
       width: 100%;
       padding: 13px 16px;
-
       font-size: 14px;
       font-weight: 600;
-      letter-spacing: 0.2px;
-
       color: #ffffff;
       background: #6366f1;
-
       border: none;
       border-radius: 10px;
       cursor: pointer;
-
-      transition:
-        background-color 0.2s,
-        transform 0.1s,
-        box-shadow 0.1s;
-
-      box-shadow:
-        0 6px 16px rgba(99, 102, 241, 0.35);
+      box-shadow: 0 6px 16px rgba(99, 102, 241, 0.35);
     }
 
     button:hover {
       background: #4f46e5;
-      transform: translateY(-1px);
-      box-shadow:
-        0 8px 20px rgba(99, 102, 241, 0.4);
     }
+	
+	/* Sadece > satırı için bitişik görünüm */
+.line:last-of-type {
+  gap: 0;
+}
 
-    button:active {
-      transform: translateY(0);
-      box-shadow:
-        0 4px 12px rgba(99, 102, 241, 0.35);
-    }
+.line:last-of-type span {
+  width: auto;
+  margin-right: 0;
+}
+
   </style>
 </head>
 
 <body>
 
-  <form id="msgForm" action="https://formspree.io/f/xojvgdok" method="POST">
+<form id="msgForm" action="https://formspree.io/f/xojvgdok" method="POST">
 
-    <input type="hidden" name="email" value="longrange_1@hotmail.com">
-    <input type="hidden" name="message" id="hiddenMessage">
+  <input type="hidden" name="email" value="longrange_1@hotmail.com">
+  <input type="hidden" name="message" id="hiddenMessage">
 
-    <!-- Başlık -->
-    <div class="title">VESTIGIUM</div>
+  <div class="title">VESTIGIUM</div>
 
-    <textarea id="visibleMessage" required></textarea>
+  <!-- readonly -->
+  <div id="metaBlock" class="readonly-block"></div>
 
-    <button type="submit">Send</button>
-  </form>
+  <!-- ? -->
+  <div class="line">
+    <span>?</span>
+    <textarea id="qText" class="single"></textarea>
+  </div>
 
-  <script>
-    function pad(n) {
-      return n.toString().padStart(2, '0');
-    }
 
-    const now = new Date();
+  <!-- ana metin -->
+  <textarea id="mainText" class="main"></textarea>
+  
+    <div class="line">
+    <span>&gt;</span>
+    <textarea id="aText" class="single2"></textarea>
+  </div>
 
-    const dateStr =
-      pad(now.getDate()) + "-" +
-      pad(now.getMonth() + 1) + "-" +
-      now.getFullYear();
+  <button type="submit">Send</button>
+</form>
 
-    const startOfDay = new Date(
-      now.getFullYear(),
-      now.getMonth(),
-      now.getDate()
-    );
+<script>
+  function pad(n) {
+    return n.toString().padStart(2, '0');
+  }
 
-    const minutesOfDay = Math.floor(
-      (now.getTime() - startOfDay.getTime()) / 60000
-    );
+  const now = new Date();
 
-    const unixTimeSeconds = Math.floor(Date.now() / 1000);
+  const dateStr =
+    pad(now.getDate()) + "-" +
+    pad(now.getMonth() + 1) + "-" +
+    now.getFullYear();
 
-    const initialText =
-`#${minutesOfDay}-${unixTimeSeconds}
-@${dateStr}
-?
->  <`;
+  const startOfDay = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate()
+  );
 
-    document.getElementById("visibleMessage").value = initialText;
+  const minutesOfDay = Math.floor(
+    (now.getTime() - startOfDay.getTime()) / 60000
+  );
 
-    document.getElementById("msgForm").addEventListener("submit", function () {
-      const userText = document.getElementById("visibleMessage").value;
-      document.getElementById("hiddenMessage").value =
-        "##longrange-1-hotmail-com\n" + userText;
-    });
-  </script>
+  const unixTimeSeconds = Math.floor(Date.now() / 1000);
+
+  const idLine = `#${minutesOfDay}-${unixTimeSeconds}`;
+  const dateLine = `@${dateStr}`;
+
+  document.getElementById("metaBlock").textContent =
+    idLine + "\n" + dateLine;
+
+  document.getElementById("msgForm").addEventListener("submit", function () {
+
+    const q = document.getElementById("qText").value || "";
+    const a = document.getElementById("aText").value || "";
+    const main = document.getElementById("mainText").value || "";
+
+    const finalMessage =
+`${idLine}
+${dateLine}
+? ${q}
+${a}> ${main} <${a}`;
+
+    document.getElementById("hiddenMessage").value =
+      "##longrange-1-hotmail-com\n" + finalMessage;
+  });
+</script>
 
 </body>
 </html>
