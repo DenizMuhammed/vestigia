@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Vestigia</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", Roboto, Inter, Arial, sans-serif;
+      background: #0b0b0c;        /* mat siyah */
+      color: #d1d5db;
+    }
+
+    form {
+      width: 100%;
+      max-width: 600px;
+      padding: 28px;
+      background: #111113;        /* kart için yumuşak kömür */
+      border-radius: 14px;
+      box-shadow:
+        0 8px 26px rgba(0, 0, 0, 0.75),
+        0 1px 2px rgba(0, 0, 0, 0.6);
+    }
+
+    .title {
+      margin-bottom: 14px;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-align: center;
+      color: #b4b4b6;
+    }
+
+    .readonly-block {
+      margin-bottom: 14px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 14px;
+      white-space: pre;
+      color: #8a8a8d;
+    }
+
+    .line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 14px;
+      color: #d1d5db;
+    }
+
+    .line span {
+      width: 14px;
+      text-align: center;
+      color: #9ca3af;
+    }
+
+    textarea.single {
+      width: 100%;
+      min-height: 36px;
+      resize: none;
+      padding: 8px 10px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      border: 1px solid #2a2a2d;
+      border-radius: 8px;
+      background: #0f0f11;
+      color: #e5e7eb;
+    }
+
+    textarea.single2 {
+      width: 220px;
+      max-width: 100%;
+      margin-left: auto;
+      min-height: 36px;
+      resize: none;
+      padding: 8px 10px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      border: 1px solid #2a2a2d;
+      border-radius: 8px;
+      background: #0f0f11;
+      color: #e5e7eb;
+    }
+
+    textarea.main {
+      width: 100%;
+      min-height: 160px;
+      resize: both;
+      padding: 12px 14px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      border: 1px solid #2a2a2d;
+      border-radius: 10px;
+      background: #0f0f11;
+      color: #e5e7eb;
+      margin-bottom: 12px;
+    }
+
+    textarea:focus {
+      outline: none;
+      background: #0f0f11;
+      border-color: #4b5563;
+      box-shadow: 0 0 0 3px rgba(75, 85, 99, 0.25);
+    }
+
+    button {
+      margin-top: 10px;
+      width: 100%;
+      padding: 13px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #c7c7c9;
+      background: #1a1a1d;        /* soluk koyu buton */
+      border: 1px solid #2a2a2d;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: none;
+    }
+
+    button:hover {
+      background: #202024;        /* çok hafif açılma */
+    }
+
+    /* Sadece > satırı için bitişik görünüm */
+    .line:last-of-type {
+      gap: 0;
+    }
+
+    .line:last-of-type span {
+      width: auto;
+      margin-right: 0;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<form id="msgForm" action="https://formspree.io/f/xojvgdok" method="POST">
+
+  <input type="hidden" name="email" value="longrange_1@hotmail.com">
+  <input type="hidden" name="message" id="hiddenMessage">
+
+  <div class="title">VESTIGIUM</div>
+
+  <div id="metaBlock" class="readonly-block"></div>
+
+  <div class="line">
+    <span>?</span>
+    <textarea id="qText" class="single"></textarea>
+  </div>
+
+  <textarea id="mainText" class="main"></textarea>
+
+  <div class="line">
+    <span>&gt;</span>
+    <textarea id="aText" class="single2"></textarea>
+  </div>
+
+  <button type="submit">Send</button>
+</form>
+
+<script>
+  function pad(n) {
+    return n.toString().padStart(2, '0');
+  }
+
+  const now = new Date();
+
+  const dateStr =
+    pad(now.getDate()) + "-" +
+    pad(now.getMonth() + 1) + "-" +
+    now.getFullYear();
+
+  const startOfDay = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate()
+  );
+
+  const minutesOfDay = Math.floor(
+    (now.getTime() - startOfDay.getTime()) / 60000
+  );
+
+  const unixTimeSeconds = Math.floor(Date.now() / 1000);
+
+  const idLine = `#${minutesOfDay}-${unixTimeSeconds}`;
+  const dateLine = `@${dateStr}`;
+
+  document.getElementById("metaBlock").textContent =
+    idLine + "\n" + dateLine;
+
+  document.getElementById("msgForm").addEventListener("submit", function () {
+
+    const q = document.getElementById("qText").value || "";
+    const a = document.getElementById("aText").value || "";
+    const main = document.getElementById("mainText").value || "";
+
+    const finalMessage =
+`${idLine}
+${dateLine}
+? ${q}
+${a}> ${main} <${a}`;
+
+    document.getElementById("hiddenMessage").value =
+      "##longrange-1-hotmail-com\n" + finalMessage;
+  });
+</script>
+
+</body>
+</html>
