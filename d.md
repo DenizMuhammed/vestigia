@@ -1,8 +1,8 @@
 ## ███████████████████████████ 2026 OCAK BÜLTEN ███████████████████████████
 
 ## HAFTA 4
-1- yapılacaklar deneme metni
-2- bu ikinci deneme girdisi
+1- burada bahsedilen emoji sahiplenme nedir bunu araştır ve bununla ilgili blog yaz: 
+https://aac.unicode.org/adopt
 ## ═════ SON ════════
 
 ## HAFTA 5
