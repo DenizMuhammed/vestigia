@@ -1,14 +1,12 @@
 ## ███████████████████████████ 2026 OCAK BÜLTEN ███████████████████████████
 
-## ═════ HAFTA 4 ════
-> cuma günü beni akşam ara.
-> bu hafta sonu şu siteleri incele sonra beni ara:
-- https://www.forth.com/resources/who-uses-forth/
->
+## HAFTA 4
+1- yapılacaklar deneme metni
+2- bu ikinci deneme girdisi
 ## ═════ SON ════════
 
-## ═════ HAFTA 5 ════
-> Gelecek hafta....
+## HAFTA 5
+Gelecek hafta....
 ## ═════ SON ════════
 
 
