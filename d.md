@@ -1,15 +1,11 @@
 ## ███████████████████████████ 2026 OCAK BÜLTEN ███████████████████████████
 
-## ══════ HAFTA 4 BAŞI ══════
-> pazartesi günü 100 kelime ezberlenecek.
-> salı günü bazı testler yapılacak. bana haber ver
-> şu sitelere bak : https://frida.re/news/
-## ══════ HAFTA'NIN SONU ══════
+## ═════ HAFTA 4 ════
+> cuma günü beni akşam ara.
+> bu hafta sonu şu siteleri incele sonra beni ara:
+- https://www.forth.com/resources/who-uses-forth/
+>
+## ═════ SON ════════
 
-## ══════ HAFTA 5 BAŞI ══════
-> pazartesi günü 100 kelime ezberlenecek.
-> salı günü bazı testler yapılacak. bana haber ver
-> şu sitelere bak : https://frida.re/news/
-## ══════ HAFTA'NIN SONU ══════
 
 ## ██████████████████████████ END OF NEWSLETTER ██████████████████████████
