@@ -9,6 +9,9 @@ https://aac.unicode.org/adopt
 3- Bu notu görünce bana mesaj at. (23 ocak Cuma günü bu mesaj yazıldı)
 
 4- bunu bloğa ekle: https://www.bbc.com/turkce/haberler-dunya-60842058
+burada radyo sürekli yayın yapıyor bunu da incele: https://www.youtube.com/watch?v=UVfveoImQI4
+
+
 ## ═════ SON ════════
 
 ## HAFTA 5
