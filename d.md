@@ -1,21 +1,10 @@
 ## ███████████████████████████ 2026 OCAK BÜLTEN ███████████████████████████
 
-## HAFTA 4
-1- burada bahsedilen emoji sahiplenme nedir bunu araştır ve bununla ilgili blog yaz: 
-https://aac.unicode.org/adopt
-
-2- bu sitenin içeriği nedir : https://tom7.org/
-
-3- Bu notu görünce bana mesaj at. (23 ocak Cuma günü bu mesaj yazıldı)
-
-4- bunu bloğa ekle: https://www.bbc.com/turkce/haberler-dunya-60842058
-burada radyo sürekli yayın yapıyor bunu da incele: https://www.youtube.com/watch?v=UVfveoImQI4
-
-
-## ═════ SON ════════
-
 ## HAFTA 5
-Gelecek hafta....
+1- bu linkteki üründen eve sipariş et. Para yoksa bana mesaj at. Ya da Aliden iste.
+https://www.trendyol.com/eti/form-kepekli-biskuvi-45-g-x-24-adet-p-44111327?boutiqueId=61&merchantId=108242&storefrontId=1&countryCode=TR&language=tr&gads=true
+
+2-
 ## ═════ SON ════════
 
 
