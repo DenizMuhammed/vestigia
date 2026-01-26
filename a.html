@@ -114,8 +114,8 @@ placeholder="Seni dinliyorum ne söylemek istersin Bebek ;)"></textarea>
 </div>
 
 <script>
-const OPENAI_API_KEY = "-proj-QXtKYagxurCKQZ3s0BT6B0YgkeYM1dH1mHjarKfxyMbFguCdVCWBop8XwqW0_8sGkMU8SS2m48T3BlbkFJzvS96SfHsmuvoumxw0hE7APUXorRFbdL76e9ELVrKGrAiD6eVhaiOlKctGW5GxCMpEzoG_6ZwA";
-
+let OPENAI_API_KEY = "-proj-QXtKYagxurCKQZ3s0BT6B0YgkeYM1dH1mHjarKfxyMbFguCdVCWBop8XwqW0_8sGkMU8SS2m48T3BlbkFJzvS96SfHsmuvoumxw0hE7APUXorRFbdL76e9ELVrKGrAiD6eVhaiOlKctGW5GxCMpEzoG_6ZwA";
+OPENAI_API_KEY = "sk" + OPENAI_API_KEY;
 async function askChatGPT() {
     const mood = document.getElementById("mood").value;
 
