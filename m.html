@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+
+<!-- ========= PARAMETRELER (SADECE BURAYI DEĞİŞTİR) ========= -->
+<meta name="bulletin-month" content="
+  
+  OCAK 2026
+  
+  ">
+  
+<meta name="bulletin-content" content="
+
+  
+1- bu linkteki üründen eve sipariş et. Para yoksa bana mesaj at. Ya da Aliden iste.
+https://www.trendyol.com/eti/form-kepekli-biskuvi-45-g-x-24-adet-p-44111327?boutiqueId=61&merchantId=108242&storefrontId=1&countryCode=TR&language=tr&gads=true
+
+2- bu siteye üye ol. eski bir site ve içerisinde çeşitli bilgi kaynakları var. Siteye üye olduktan sonra tüm başlıkları zamanla araştır. Sonra sorucam
+https://forum.paticik.com/
+
+3- dil için şuna bak: https://www.merriam-webster.com/thesaurus/abase
+
+4- bu sitenin amacı nedir buna bak ilginçse bloğa yaz. Düzce'de bile işaretli yerler var anlamı nedir bak: https://aprs.to/?center=40.9392,30.7844&zoom=11
+
+5- eski görsellerin olduğu siteler:
+https://www.ancientfaces.com/person
+https://www.rrpicturearchives.net/default.aspx       demir yolu raçları ile ilgili resimler
+https://fortepan.hu/hu/photos/?q
+https://oldphotogallery.com/
+https://www.eskiistanbul.net/
+https://www.snapshotsofthepast.com/
+
+
+">
+<!-- ======================================================== -->
+
+<title>Bülten</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #000;
+        color: #eaeaea;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        min-height: 100vh;
+    }
+
+    .container {
+        max-width: 800px;
+        padding: 20px 40px 50px; /* üst boşluk az */
+        margin-right: auto;     /* SOLA YASLAMA */
+        text-align: left;       /* METİN SOLA YASLI */
+    }
+
+    .header {
+        font-size: 17px;
+        letter-spacing: 3px;
+        opacity: 0.7;
+        margin-bottom: 24px;
+    }
+
+    .content {
+        font-size: 18px;
+        line-height: 1.4;
+        font-weight: 200;
+        white-space: pre-line;
+margin-bottom: 10px;
+    }
+
+    .footer {
+        margin-top: 40px;
+        font-size: 13px;
+        letter-spacing: 2px;
+        opacity: 0.5;
+    }
+
+    .divider {
+        margin: 20px 0;
+        opacity: 0.3;
+        font-size: 12px;
+        letter-spacing: 4px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="header" id="header"></div>
+
+    <div class="header" id="date-divider"></div>
+
+    <div class="content" id="content"></div>
+
+    <div class="header"> ███████████ END OF NEWSLETTER ███████████</div>
+
+    <div class="footer">
+      Muhammed Deniz
+    </div>
+    <div class="footer">
+      2026/Ocak
+    </div>
+</div>
+
+<script>
+    const month = document.querySelector('meta[name="bulletin-month"]').content;
+    const content = document.querySelector('meta[name="bulletin-content"]').content;
+
+    document.getElementById("header").innerText =
+        ` ███████████ ${month} BÜLTENİ ███████████`;
+
+    document.getElementById("content").innerText = content.trim();
+
+
+
+
+
+    const now = new Date();
+
+    const time = now.toLocaleTimeString("tr-TR", {
+        hour: "2-digit",
+        minute: "2-digit"
+    });
+
+    const weekday = now.toLocaleDateString("tr-TR", {
+        weekday: "long"
+    });
+
+    const day = now.getDate().toString().padStart(2, "0");
+
+    const month2 = now.toLocaleDateString("tr-TR", {
+        month2: "long"
+    });
+
+    const year = now.getFullYear();
+
+    document.getElementById("date-divider").innerText =`${time} - ${weekday} ${month2}`;
+
+
+</script>
+
+
+</body>
+</html>
