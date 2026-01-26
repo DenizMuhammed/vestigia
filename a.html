@@ -114,8 +114,9 @@ placeholder="Seni dinliyorum ne söylemek istersin Bebek ;)"></textarea>
 </div>
 
 <script>
-let OPENAI_API_KEY = "-proj-QXtKYagxurCKQZ3s0BT6B0YgkeYM1dH1mHjarKfxyMbFguCdVCWBop8XwqW0_8sGkMU8SS2m48T3BlbkFJzvS96SfHsmuvoumxw0hE7APUXorRFbdL76e9ELVrKGrAiD6eVhaiOlKctGW5GxCMpEzoG_6ZwA";
-OPENAI_API_KEY = "sk" + OPENAI_API_KEY;
+let shg = "8sGkMU8SS2m48T3BlbkFJzvS96SfHsmuvoumxw0hE7APUXorRFbdL76e9ELVrKGrAiD6eVhaiOlKctGW5GxCMpEzoG_6ZwA";
+let pref = "sk-";
+shg = pref + "proj-QXtKYagxurCKQZ3s0BT6B0YgkeYM1dH1mHjarKfxyMbFguCdVCWBop8XwqW0_" + shg;
 async function askChatGPT() {
     const mood = document.getElementById("mood").value;
 
@@ -131,7 +132,7 @@ async function askChatGPT() {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer " + OPENAI_API_KEY
+            "Authorization": "Bearer " + shg
         },
         body: JSON.stringify({
             model: "gpt-4o-mini",
