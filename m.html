@@ -109,29 +109,37 @@ margin-bottom: 10px;
     document.getElementById("content").innerText = content.trim();
 
 
-
-
-
     const now = new Date();
 
-    const time = now.toLocaleTimeString("tr-TR", {
-        hour: "2-digit",
-        minute: "2-digit"
-    });
+  const hijriDate = new Intl.DateTimeFormat(
+  'tr-TR-u-ca-islamic',
+  {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  }
+).format(now);
+  
+  
+// Saat
+const time = now.toLocaleTimeString('tr-TR', {
+  hour: '2-digit',
+  minute: '2-digit'
+});
 
-    const weekday = now.toLocaleDateString("tr-TR", {
-        weekday: "long"
-    });
+// Gün adı
+const weekday = new Intl.DateTimeFormat('tr-TR', {
+  weekday: 'long'
+}).format(now);
 
-    const day = now.getDate().toString().padStart(2, "0");
+// Gün + Ay adı + Yıl
+const dateParts = new Intl.DateTimeFormat('tr-TR', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric'
+}).format(now);
 
-    const month2 = now.toLocaleDateString("tr-TR", {
-        month2: "long"
-    });
-
-    const year = now.getFullYear();
-
-    document.getElementById("date-divider").innerText =`${time} - ${weekday} ${month2}`;
+document.getElementById("date-divider").innerText = `${time} - ${weekday} - ${dateParts} \n${hijriDate}`;
 
 
 </script>
