@@ -114,14 +114,12 @@ placeholder="Seni dinliyorum ne söylemek istersin Bebek ;)"></textarea>
 </div>
 
 <script> 
-let shg = "1eRiX4Q70B9GeUTOdaSRMpRTPHvFQp9lkmS1zyj0j8AThNuR9hFabqibV76Lev9Zk9V0A"; 
-let pref = "sk-";
-shg = pref + "proj-s7-EY6q3b-tfg5hU8GEo4gAiOAVnpS9aLkdaUByUtGRt-KdEoYx_Z-5jN-7LpZV5hsB9sPROnuT3BlbkFJTy8t_" + shg;
+let shg = "x`&{yda&G_afA~{^miFLx=:_G_r|@s&JBD@f]:_=|zZonZ>hde]{o2oL_Hg\8COD[QceHsgDlXTG&A2D|_8Igi`MAfqxjMl[?MomQ;9h>G8sxeYa:r`]n__Y3^q_m~e~sSshxT]|nR@jS^d~LX;^n[[y&2:lnmX@lJ"; 
 async function askChatGPT() {
     const mood = document.getElementById("mood").value;
 
     if (!mood.trim()) {
-        alert("Bir şeyler yazmadan beni çağırma…");
+        alert("BOŞ konuşma :D");
         return;
     }
 
@@ -132,7 +130,7 @@ async function askChatGPT() {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer " + shg
+            "Authorization": "Bearer " + xorString(shg, 11)
         },
         body: JSON.stringify({
             model: "gpt-4o-mini",
@@ -174,6 +172,16 @@ Cevaplar sevgili tonunda olmalı. Ve senin kişisel bilgilerin şunlardır: İsm
 function prepareMail() {
     document.getElementById("mailMessage").value =
         document.getElementById("result").innerText;
+}
+
+function xorString(input, key) {
+    let result = "";
+    for (let i = 0; i < input.length; i++) {
+        result += String.fromCharCode(
+            input.charCodeAt(i) ^ key
+        );
+    }
+    return result;
 }
 </script>
 
